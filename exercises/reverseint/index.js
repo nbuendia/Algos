@@ -15,6 +15,7 @@
 //     return Number(reversedNum.join(''));
 // }
 
+//TERNARY
 function reverseInt(n) {
     const reversedNum = Math.abs(n).toString().split('').reverse();
     return (n <= 9 && n >= 0) ? n 
