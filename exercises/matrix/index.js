@@ -32,26 +32,28 @@ function matrix(n) {
         }
         startRow++;
 
-        //RIGHT COLUMN
+        //RIGHT-COLUMN
         for (let i = startRow; i <= endRow; i++) {
             matrix[i][endCol] = num;
             num++;
         }
         endCol--;
 
+        //BOTTOM-ROW
         for (let i = endCol; i >= startCol; i--) {
             matrix[endRow][i] = num;
             num++;
         }
         endRow--;
 
+        //LEFT-COLUMN
         for (let i = endRow; i >= startRow; i--) {
             matrix[i][startCol] = num;
             num++
         }
         startCol++
     }
-    
+
     return matrix;
 }
 
