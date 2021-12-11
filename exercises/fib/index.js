@@ -8,6 +8,23 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// function fib(n) {
+//     let fibArr = [0, 1];
+//     if (n === 1) return 1;
+
+//     for (let i = fibArr.length; i <= n; i++) {
+//         let secondToLast = fibArr[fibArr.length - 2];
+//         let last = fibArr[fibArr.length - 1];
+//         fibArr[i] = secondToLast + last;
+//     }
+
+//     return fibArr[n];
+// }
+
+//RECURSIVE
+function fib(n) {
+    if (n < 2) return n;
+    return fib(n - 2) + fib(n - 1);
+}
 
 module.exports = fib;
