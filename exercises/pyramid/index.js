@@ -14,6 +14,32 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+    let pyramid = [];
+    let spaces = [];
+    let pounds = [];
+    let poundCount = 1;
+
+    for (let i = 0; i < n - 1; i ++) spaces[i] = Array(i + 1).fill(' ');
+    for (let i = 0; i < n; i++) { 
+        pounds[i] = Array(i + poundCount).fill('#');
+        poundCount++;
+    }
+
+    spaces.reverse();
+
+    for (let i = 0; i < n; i++) {
+        if (i === n - 1) pyramid[i] = pounds[i];
+        else pyramid[i] = spaces[i].concat(pounds[i]);
+    }
+
+    for (let i = 0; i <= n - 1; i++) {
+        if (i === n - 1) console.log(pyramid[i].join(''));
+        else {
+            pyramid[i].push(...spaces[i]);
+            console.log(pyramid[i].join(''))
+        }
+    }
+}
 
 module.exports = pyramid;
