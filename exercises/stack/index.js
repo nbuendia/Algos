@@ -10,6 +10,38 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-class Stack {}
+class Stack {
+    constructor() {
+        this.stack = [];
+    }
+
+    //USING ARRAY METHODS
+    // push(element) {
+    //     this.stack.push(element);
+    // }
+
+    // pop() {
+    //     return this.stack.pop();
+    // }
+
+    // peek() {
+    //     return this.stack[this.stack.length - 1];
+    // }
+
+    //NO ARRAY METHODS
+    push(element) {
+        this.stack[this.stack.length] = element;
+    }
+
+    pop() {
+        let element = this.stack[this.stack.length - 1];
+        this.stack.length -= 1;
+        return element;
+    }
+
+    peek () {
+        return this.stack[this.stack.length - 1];
+    }
+}
 
 module.exports = Stack;
